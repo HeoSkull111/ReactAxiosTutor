@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: -apple-system, "Quicksand",sans-serif;
+}
+.button {
+  background-color: #4E1D70;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bolder;
+  margin: 0 5px;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

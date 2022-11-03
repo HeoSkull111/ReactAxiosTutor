@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "HoTen": "test4",
+      "ChucVu": "test4",
+      "DiaChi": "test4",
+      "id": 1
+    },
+    {
+      "HoTen": "test41",
+      "ChucVu": "test4",
+      "DiaChi": "test4",
+      "id": 2
+    }
+  ]
+}
