@@ -6,12 +6,16 @@ body {
   background-color: #4E1D70;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
+  border-radius:1em;
+  padding: 0.7em 0.7em;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: bolder;
   margin: 0 5px;
+  font-size: 0.6em;
+  color: white;
+  font-weight: bolder;
+}
+span {
+  color :#F1C4A7
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

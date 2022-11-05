@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 import { Component } from 'react';
 const api = axios.create({
-  baseURL: 'http://localhost:3004/data'
+  baseURL: 'http://localhost:4000/api/get/nhanvien'
 })
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
       // let data = await api.get('/').then(({ data }) => data);
       let data = await axios({
         method: 'get',
-        url: 'http://localhost:3004/data',
+        url: 'http://localhost:4000/api/get/nhanvien',
       }).then(({ data }) => data);
       this.setState({ NhanVien: data });
     } catch (err) {
@@ -29,8 +29,8 @@ class App extends Component {
   }
 
   createNhanVien = async () => {
-    let res = await api.post('/', { "HoTen": "test4", "ChucVu": "test4", "DiaChi": "test4" })
-    .catch(err => console.log(err));
+    let res = await api.post('/', { "HoTen": "test4", "ChucVu": "test4", "DiaChi": "test4", "Tuoi": 4 })
+      .catch(err => console.log(err));
     console.log(res);
     this.getNhanVien();
   }
@@ -40,7 +40,7 @@ class App extends Component {
     this.getNhanVien();
   }
 
-  UpdateNhanVien = async(id, val) => {
+  UpdateNhanVien = async (id, val) => {
     let data = await api.patch(`/${id}`, { "HoTen": val })
     this.getNhanVien();
   }
@@ -48,25 +48,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <button onClick={this.createNhanVien}>createNhanVien</button>
-          {this.state.NhanVien.map(NhanVien =>
-            <h2 key={NhanVien.id}>{NhanVien.HoTen}
-            <button onClick={() => this.UpdateNhanVien(NhanVien.id, `${NhanVien.HoTen}1`)} class="button">Update</button>
-              <button onClick={() => this.DeleteNhanVien(NhanVien.id)} class="button">x</button>
-            </h2>)}
-
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          {/* <button onClick={this.createNhanVien} class="button">Thêm Nhân Viên</button> */}
+          {this.state.NhanVien.map(NhanVien =>
+            <h2><span>id:</span> {NhanVien.id} - <span>Họ và tên:</span> {NhanVien.HoTen} - <span>Chức vụ:</span> {NhanVien.ChucVu} - <span>Địa chỉ:</span> {NhanVien.DiaChi} - <span>Tuổi:</span> {NhanVien.Tuoi}
+              {/* <button onClick={() => this.UpdateNhanVien(NhanVien.id, `${NhanVien.HoTen}1`)} class="button">Update</button>
+              <button onClick={() => this.DeleteNhanVien(NhanVien.id)} class="button">Delete</button> */}
+            </h2>)}
         </header>
       </div>
     );
