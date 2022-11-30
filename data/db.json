@@ -1,16 +1,22 @@
 {
   "data": [
     {
-      "HoTen": "test4",
-      "ChucVu": "test4",
-      "DiaChi": "test4",
-      "id": 1
+      "HoTen": "Hồ Nguyễn Thiên Á",
+      "ChucVu": "Tester",
+      "DiaChi": "1 Trần Duy Hưng",
+      "Tuoi": 20
     },
     {
-      "HoTen": "test41",
-      "ChucVu": "test4",
-      "DiaChi": "test4",
-      "id": 2
+      "HoTen": "Trần Nguyễn Vin",
+      "ChucVu": "Debugger",
+      "DiaChi": "3 Trần Duy Hưng",
+      "Tuoi": 20
+    },
+    {
+      "HoTen": "Nguyễn Quốc Kháng",
+      "ChucVu": "Developer",
+      "DiaChi": "2 Trần Duy Hưng",
+      "Tuoi": 19
     }
   ]
 }

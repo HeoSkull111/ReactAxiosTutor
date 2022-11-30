@@ -3,7 +3,7 @@ import './App.css';
 import axios from 'axios';
 import { Component } from 'react';
 const api = axios.create({
-  baseURL: 'http://localhost:4000/api/get/nhanvien'
+  baseURL: 'http://localhost:3004/data'
 })
 
 class App extends Component {
@@ -14,20 +14,20 @@ class App extends Component {
     super();
     this.getNhanVien();
   }
-
+  
   getNhanVien = async () => {
     try {
       // let data = await api.get('/').then(({ data }) => data);
       let data = await axios({
         method: 'get',
-        url: 'http://localhost:4000/api/get/nhanvien',
+        url: 'http://localhost:3004/data',
       }).then(({ data }) => data);
       this.setState({ NhanVien: data });
     } catch (err) {
       console.log(err);
     }
   }
-
+  /*
   createNhanVien = async () => {
     let res = await api.post('/', { "HoTen": "test4", "ChucVu": "test4", "DiaChi": "test4", "Tuoi": 4 })
       .catch(err => console.log(err));
@@ -43,7 +43,7 @@ class App extends Component {
   UpdateNhanVien = async (id, val) => {
     let data = await api.patch(`/${id}`, { "HoTen": val })
     this.getNhanVien();
-  }
+  } */
   render() {
     return (
       <div className="App">
@@ -51,7 +51,8 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           {/* <button onClick={this.createNhanVien} class="button">Thêm Nhân Viên</button> */}
           {this.state.NhanVien.map(NhanVien =>
-            <h2><span>id:</span> {NhanVien.id} - <span>Họ và tên:</span> {NhanVien.HoTen} - <span>Chức vụ:</span> {NhanVien.ChucVu} - <span>Địa chỉ:</span> {NhanVien.DiaChi} - <span>Tuổi:</span> {NhanVien.Tuoi}
+            <h2><span>Họ và tên:</span> {NhanVien.HoTen} - <span>Tuổi:</span> {NhanVien.Tuoi} 
+            - <span>Chức vụ:</span> {NhanVien.ChucVu} - <span>Địa chỉ:</span> {NhanVien.DiaChi}
               {/* <button onClick={() => this.UpdateNhanVien(NhanVien.id, `${NhanVien.HoTen}1`)} class="button">Update</button>
               <button onClick={() => this.DeleteNhanVien(NhanVien.id)} class="button">Delete</button> */}
             </h2>)}
